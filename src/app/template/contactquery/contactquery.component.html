@@ -1,0 +1,31 @@
+<input class="form-control" type="text" name="search" [(ngModel)]="userFilter.name">      
+
+<table class="table table-hover">
+
+  <tr>
+    <th (click)="sort('name')">Name
+      <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+    </th>
+    <th (click)="sort('email')">Email</th>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Gender</th>
+    <th>action</th>
+ 
+  </tr>
+  
+  <tr *ngFor='let arr of contactarr |   paginate: { itemsPerPage: 5, currentPage: p } | orderBy: key : reverse | filterBy: userFilter; let i = index'>
+    <td >{{arr.name}}</td>
+    <td>{{arr.email}}</td>
+    <td >{{arr.subject}}</td>
+    <td>{{arr.message}}</td>
+    <td>{{arr.gender}}</td>
+  
+    
+    
+   <!--<td ><a  (click)="deletedata(arr._id)"> Delete</a></td>-->
+    <td><button (click)="deletedata(arr._id)">Delete</button></td>
+    
+  </tr>   
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
