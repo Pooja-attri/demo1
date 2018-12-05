@@ -1,0 +1,43 @@
+<h1 class="page-header">Add Customer
+    
+</h1>
+<form (submit)="onAddSubmit()">
+      <div class="form-group">
+          <label>first_name</label>
+          <input type="text" class="form-control" [(ngModel)]="first_name" name="first_name" placeholder="first_name ...">
+      </div>
+      <div class="form-group">
+          <label>last_name</label>
+          <input type="text" class="form-control" [(ngModel)]="last_name" name="last_name" placeholder="last_name ...">
+      </div>
+      <div class="form-group">
+          <label>company</label>
+          <input type="text" class="form-control" [(ngModel)]="company" name="company" placeholder="company ...">
+      </div>
+      <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Email ...">
+      </div>
+      <div class="form-group">
+          <label>phone</label>
+          <input type="text" class="form-control" [(ngModel)]="phone" name="phone" placeholder="phone ...">
+      </div>
+
+      <div class="form-group">
+          <label>street</label>
+          <input type="text" class="form-control" [(ngModel)]="street" name="street" placeholder="street ...">
+      </div>
+      <div class="form-group">
+          <label>city</label>
+          <input type="text" class="form-control" [(ngModel)]="city" name="city" placeholder="city ...">
+      </div>
+      <div class="form-group">
+          <label>state</label>
+          <input type="text" class="form-control" [(ngModel)]="state" name="state" placeholder="state ...">
+      </div>
+      <div class="form-group">
+          <label>zip</label>
+          <input type="text" class="form-control" [(ngModel)]="zip" name="zip" placeholder="zip ...">
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+  </form>

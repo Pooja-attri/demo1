@@ -17,12 +17,14 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ApplayoutComponent,
     TopbarComponent,
-    FooterComponent,
+    FooterComponent
+
 
   ],
   imports: [

@@ -1,0 +1,24 @@
+<form (submit)="onAddSubmit()" class="addInvoiceForm">
+  <div class="form-group">
+    <label>Service</label>
+    <input type="text" class="form-control" [(ngModel)]="service" name="service" placeholder="Service ...">
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" [(ngModel)]="price" name="price" placeholder="price ...">
+  </div>
+  <div class="form-group">
+    <label>status</label>
+    <select class="form-control" [(ngModel)]="status" name="status">
+      <option selected value="unpaid">unpaid</option>
+      <option value="paid">paid</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>due</label>
+    <input type="date" class="form-control" [(ngModel)]="due" name="due" placeholder="Дата ...">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+</form>

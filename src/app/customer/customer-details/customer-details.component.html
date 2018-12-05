@@ -1,0 +1,48 @@
+
+<div *ngIf="customer">
+  <h1 class="page-header bg-primary alert text-center">{{customer.first_name}}</h1>
+
+  <h4 class="page-header alert alert-danger">Contacts</h4>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>company: </strong>{{customer.company}}</li>
+    <li class="list-group-item"><strong>Email: </strong>{{customer.email}}</li>
+    <li class="list-group-item"><strong>phone: </strong>{{customer.phone}}</li>
+  </ul>
+
+  <h4 class="page-header alert alert-danger">Location</h4>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Улица: </strong>{{customer.address.street}}</li>
+    <li class="list-group-item"><strong>city: </strong>{{customer.address.city}}</li>
+    <li class="list-group-item"><strong>Fields: </strong>{{customer.address.state}}</li>
+    <li class="list-group-item"><strong>Index: </strong>{{customer.address.zip}}</li>
+  </ul>
+
+  <h4 class="page-header alert alert-danger">Invoices
+    <a routerLink="/invoice/add-invoice/{{ customer._id}}" class="pull-right btn btn-default btn-sm">Invoice</a>
+  </h4>
+
+  <div class="invoices">
+    <table class="table">
+      <tr class="bg-primary">
+        <th> Account number</th>
+        <th>Services</th>
+        <th>price</th>
+        <th>status</th>
+        <th>Date</th>
+        <th>Management</th>
+      </tr>
+      <tr *ngFor="let invoice of invoices">
+        <td>{{ invoice._id }}</td>
+        <td>{{ invoice.service }}</td>
+        <td>{{ invoice.price }}</td>
+        <td>{{ invoice.status }}</td>
+        <td>{{ invoice.due }}</td>
+        <td>
+          <a (click)="markPaid(invoice._id, invoice)" class="btn btn-success btn-sm">Close payment</a>
+          <a href="" (click)="onDeleteClick(invoice._id)" class="btn btn-danger btn-sm">delete
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

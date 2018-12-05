@@ -21,7 +21,10 @@ const routes: Routes = [
       path:'template',
       loadChildren:'./template/template.module#TemplateModule'
     },
-    
+    {
+        path:'invoice',
+        loadChildren:'./invoice/invoice.module#InvoiceModule'
+    },
     {
       path:'',
       redirectTo:'',

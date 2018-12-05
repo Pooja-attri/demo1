@@ -1,0 +1,25 @@
+
+<h2 class="page-header">customer</h2>
+
+<div class="customers">
+  <table class="table">
+    <tr>
+      <th>Last-name</th>
+      <th>First-name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.last_name }}</td>
+      <td>{{ customer.first_name }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>
+        <a routerLink="/customer/customer-details/{{customer._id}}" class="btn btn-success btn-sm">Read More</a>
+        <a routerLink="/customer/customer/edit/{{customer._id}}"  class="btn btn-warning btn-sm">Edit</a>
+        <a href="" (click)="onDeleteClick(customer._id)" class="btn btn-danger btn-sm">Delete</a>
+      </td>
+    </tr>
+  </table>
+</div>
